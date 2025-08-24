@@ -1,5 +1,29 @@
-# Ignore all data by default
+# General
+.DS_Store
+*.log
+*.tmp
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.venv*/
+pip-wheel-metadata/
+dist/
+build/
+*.egg-info/
+
+# Airflow / Docker
+logs/
+pgdata/
+airflow/*.pid
+.airflow*
+.airflow/
+.env.*
+docker-compose.override.yml
+
+# Data
 data/*
-# …but keep docs and samples
-!data/README.md
-!data/samples/**
+!data/.gitkeep

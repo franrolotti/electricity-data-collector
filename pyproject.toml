@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "electricity-data-collector"
+version = "0.1.0"
+description = "ENTSO-E ingestion with Airflow"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.2",
+  "requests>=2.32",
+  "xmltodict>=0.13",
+  "tenacity>=8.5",
+  "python-dateutil>=2.9",
+  "pyarrow>=17.0",
+  "python-dotenv>=1.0",
+]
+
+[tool.setuptools]
+# We only want to package the 'edc' package; everything else is app scaffolding
+packages = ["edc"]
+
+# Alternatively (equivalent), you could use discovery:
+# [tool.setuptools.packages.find]
+# include = ["edc*"]
+# exclude = ["airflow*", "data*", "notebooks*", "tests*", "scripts*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
