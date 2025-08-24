@@ -1,0 +1,5 @@
+# Ignore all data by default
+data/*
+# …but keep docs and samples
+!data/README.md
+!data/samples/**
