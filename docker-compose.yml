@@ -45,6 +45,7 @@ services:
       - "5432:5432"
 
   airflow-init:
+    restart: "no"
     <<: *airflow-common
     command: >
       bash -lc "pip install --no-cache-dir -q xmltodict==0.14.2 python-dotenv==1.0.1 &&
