@@ -26,7 +26,7 @@ Data is stored in **Parquet** format and organized for downstream processing wit
 electricity-data-collector/
 ├── dags/                # Airflow DAG definitions
 ├── edc/                 # ETL logic (ENTSO-E client, file handlers, etc.)
-├── scripts/             # Helper scripts for testing/debugging
+├── notebooks/           # Notebook for visualizing downloaded data
 ├── docker-compose.yml   # Local Docker setup
 ├── .env.example         # Example environment configuration
 └── README.md
