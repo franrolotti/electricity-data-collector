@@ -21,7 +21,6 @@ pgdata/
 airflow/*.pid
 .airflow*
 .airflow/
-.env.*
 docker-compose.override.yml
 
 # Data
