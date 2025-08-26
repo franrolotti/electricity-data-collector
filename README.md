@@ -64,24 +64,35 @@ electricity-data-collector/
    EDC_TIMEZONE=Europe/Madrid   # or your local timezone
    ```
 
-3. **Start Airflow + Postgres**
 
-   ```bash
-   docker compose up -d
-   ```
 
-   This will start:
+### 3. Initialize Airflow (only the **first time**)
 
-   * `airflow-db`: PostgreSQL database for Airflow
-   * `airflow`: Airflow scheduler + webserver
+```bash
+docker compose run --rm airflow-init
+```
 
-4. **Access the Airflow UI**
-   Open [http://localhost:8080](http://localhost:8080) in your browser.
+This creates/migrates the metadata DB and the default user.
 
-5. **Trigger a DAG**
+### 4. Start Airflow + Postgres
 
-   * Enable the `edc_collector` DAG in the UI.
-   * This will download electricity data and write to `data/standard/`.
+```bash
+docker compose up -d
+```
+
+This starts:
+
+* `airflow-db` (PostgreSQL)
+* `airflow` (scheduler + webserver)
+
+### 5. Access the Airflow UI
+
+Open [http://localhost:8080](http://localhost:8080)
+
+### 6. Enable the DAG
+
+In the UI, toggle **`entsoe_sync`** to ON.
+
 
 ---
 
